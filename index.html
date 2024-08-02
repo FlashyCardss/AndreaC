@@ -9,10 +9,10 @@
     <style>
         :root {
             --main-bg-color: #f0e9db;
-            --main-text-color: #333;
+            --main-text-color: #000000;
             --highlight-color: #86c434;
-            --button-bg-color: ##5ab148;
-            --button-hover-bg-color: #5ab148;
+            --button-bg-color: #5ab148;
+            --button-hover-bg-color: #2be22b;
             --button-active-bg-color: #5ab148;
             --card-bg-color: rgba(231, 177, 29, 0.8);
         }
@@ -82,7 +82,7 @@
         .intro-section {
             background: url('imagenes/seccion2.jpg') no-repeat center center;
             background-size: cover;
-            color: #3a2a1b;
+            color: #000000;
             text-align: center;
             padding: 5vh 2vw;
             font-size: 6vw;
@@ -122,13 +122,14 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             margin: 2vh 0;
             padding: 2vh 2vw;
-            text-align: left;
+            text-align: center;
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 1s, transform 1s;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 2vw;
+            justify-content: center;
             color: #ffffff;
         }
 
@@ -139,13 +140,12 @@
 
         .card i {
             font-size: 6vw;
-            margin-right: 1vw;
+            margin-bottom: 1vh;
         }
 
         .card p {
             margin: 0;
             font-size: 4vw;
-            flex: 3;
         }
 
         .footer {
@@ -189,7 +189,7 @@
         .closing-section {
             background: url('imagenes/seccion2.jpg') no-repeat center center;
             background-size: cover;
-            color: #3a2a1b;
+            color: #000000;
             text-align: center;
             padding: 5vh 2vw;
             font-size: 6vw;
@@ -299,67 +299,51 @@
 <div class="container">
     <div class="card hidden" id="section1">
         <i class="fas fa-birthday-cake"></i>
-        <div>
-            <p><strong>Fecha:</strong> 14 de septiembre de 2024</p>
-            <p><strong>Hora:</strong> 18:00 hrs.</p>
-        </div>
+        <p><strong>Fecha:</strong> 14 de septiembre de 2024</p>
+        <p><strong>Hora:</strong> 18:00 hrs.</p>
     </div>
 
     <div class="card hidden" id="section2">
         <i class="fas fa-map-marker-alt"></i>
-        <div>
-            <p><strong>Lugar:</strong> Salón Foyer, Courtyard Mazatlán Beach Resort</p>
-            <p><strong>Dirección:</strong> Av. Playa Gaviotas 214, Zona Dorada, CP 82110, Mazatlán, Sinaloa, México</p>
-            <p><strong>Mapa del Hotel:</strong> <a href="https://maps.app.goo.gl/KKDp2isst8js54x76" target="_blank">Ver en Google Maps</a></p>
-        </div>
+        <p><strong>Lugar:</strong> Salón Foyer, Courtyard Mazatlán Beach Resort</p>
+        <p><strong>Dirección:</strong> Av. Playa Gaviotas 214, Zona Dorada, CP 82110, Mazatlán, Sinaloa, México</p>
+        <p><strong>Mapa del Hotel:</strong> <a href="https://maps.app.goo.gl/KKDp2isst8js54x76" target="_blank">Ver en Google Maps</a></p>
     </div>
 
     <div class="card hidden" id="section3">
         <i class="fas fa-church"></i>
-        <div>
-            <p><strong>Hora de la Ceremonia:</strong> 18:00 hrs.</p>
-            <p><strong>Lugar de la Ceremonia:</strong> En el mismo lugar (Salón Foyer)</p>
-        </div>
+        <p><strong>Hora de la Ceremonia:</strong> 18:00 hrs.</p>
+        <p><strong>Lugar de la Ceremonia:</strong> En el mismo lugar (Salón Foyer)</p>
     </div>
 
     <div class="card hidden" id="section4">
         <i class="fas fa-tshirt"></i>
-        <div>
-            <p><strong>Código de Vestimenta:</strong> Formal</p>
-        </div>
+        <p><strong>Código de Vestimenta:</strong> Formal</p>
     </div>
 
     <div class="card hidden" id="section5">
         <i class="fas fa-exclamation-circle"></i>
-        <div>
-            <p><strong>No se permitirá la entrada a niños.</strong></p>
-            <p><strong>Lluvia de sobres:</strong> Regalo monetario</p>
-        </div>
+        <p><strong>No se permitirá la entrada a niños.</strong></p>
+        <p><strong>Lluvia de sobres:</strong> Regalo de dinero</p>
     </div>
 
     <div class="card hidden" id="section6">
         <i class="fas fa-calendar-check"></i>
-        <div>
-            <p><strong>Confirmar asistencia antes del 30 de agosto de 2024:</strong> </p>
-        </div>
+        <p><strong>Confirmar asistencia antes del 30 de agosto de 2024:</strong></p>
     </div>
 
     <div class="card hidden" id="section7">
         <i class="fas fa-hotel"></i>
-        <div>
-            <p>Para su comodidad, pueden hacer reservas en el hotel a través del siguiente enlace:</p>
-            <p><a href="https://www.marriott.com/es/event-reservations/reservation-link.mi?id=1720721340001&key=GRP&app=resvlink" target="_blank" style="color: #1a41c2;">Reservar habitación</a> (Vigencia del link: hasta el 16 de agosto de 2024)</p>
-            <p>Nota: Consideren que hay mucho tráfico en esas fechas. El hotel se encuentra en la zona dorada de Mazatlán.</p>
-        </div>
+        <p>Para su comodidad, pueden hacer reservas en el hotel a través del siguiente enlace:</p>
+        <p><a href="https://www.marriott.com/es/event-reservations/reservation-link.mi?id=1720721340001&key=GRP&app=resvlink" target="_blank" style="color: #1a41c2;">Reservar habitación</a> (Vigencia del link: hasta el 16 de agosto de 2024)</p>
+        <p>Nota: Consideren que hay mucho tráfico en esas fechas. El hotel se encuentra en la zona dorada de Mazatlán.</p>
     </div>
 
     <div class="card hidden" id="section8">
         <i class="fas fa-phone-alt"></i>
-        <div>
-            <p><strong>Papás:</strong></p>
-            <p>Daniel Morquecho</p>
-            <p>Haydee Vázquez</p>
-        </div>
+        <p><strong>Papás:</strong></p>
+        <p>Daniel Morquecho</p>
+        <p>Haydee Vázquez</p>
     </div>
 </div>
 
@@ -451,4 +435,3 @@
 
 </body>
 </html>
-
