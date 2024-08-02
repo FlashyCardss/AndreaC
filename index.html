@@ -7,85 +7,105 @@
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
+        :root {
+            --main-bg-color: #f0e9db;
+            --main-text-color: #333;
+            --highlight-color: #86c434;
+            --button-bg-color: #8848b1;
+            --button-hover-bg-color: #8a2be2;
+            --button-active-bg-color: #5e10a1;
+            --card-bg-color: rgba(231, 177, 29, 0.8);
+        }
+
         body {
             font-family: 'Lexend', sans-serif;
-            background: #f0e9db;
-            color: #333;
+            background: var(--main-bg-color);
+            color: var(--main-text-color);
             margin: 0;
             padding: 0;
         }
+
         .header {
             background: url('imagenes/fondo.jpg') no-repeat center center;
             background-size: cover;
             color: #000000;
             text-align: center;
-            padding: 100px 20px;
+            padding: 10vh 2vw;
             position: relative;
             z-index: 1;
         }
+
         .header h1 {
             margin: 0;
-            font-size: 72px;
+            font-size: 8vw;
             font-family: 'Brush Script MT', cursive;
             font-weight: 400;
             opacity: 0;
             transform: translateY(-20px);
             animation: fadeIn 2s forwards;
         }
+
         .header h2 {
-            margin: 10px 0 0;
-            font-size: 24px;
+            margin: 1vh 0 0;
+            font-size: 6vw;
             opacity: 0;
             transform: translateY(-20px);
             animation: fadeIn 2s forwards;
             animation-delay: 1s;
         }
+
         @keyframes fadeIn {
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
+
         .countdown {
-            font-size: 24px;
-            margin-top: 10px;
+            font-size: 6vw;
+            margin-top: 2vh;
             display: flex;
             justify-content: center;
-            gap: 10px;
+            gap: 2vw;
             font-family: Arial, sans-serif;
             color: #799365;
         }
+
         .countdown div {
             background-color: rgba(255, 255, 255, 0.8);
             border-radius: 10px;
-            padding: 10px;
+            padding: 2vh 1vw;
             text-align: center;
-            width: 60px;
+            width: 12vw;
         }
+
         .intro-section {
             background: url('imagenes/seccion2.jpg') no-repeat center center;
             background-size: cover;
             color: #3a2a1b;
             text-align: center;
-            padding: 50px 20px;
-            font-size: 24px;
+            padding: 5vh 2vw;
+            font-size: 6vw;
             position: relative;
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 1s, transform 1s;
         }
+
         .intro-section.show {
             opacity: 1;
             transform: translateY(0);
         }
+
         .intro-section p {
             margin: 0;
         }
+
         .container {
             width: 100%;
             margin: auto;
             overflow: hidden;
-            padding: 20px 0;
+            padding: 2vh 0;
             background: linear-gradient(to bottom, #f4f4f4, #e0e0e0);
             background-image: repeating-linear-gradient(
                 45deg,
@@ -95,107 +115,171 @@
                 transparent 10px
             );
         }
+
         .card {
-            background-color: rgba(231, 177, 29, 0.8);
+            background-color: var(--card-bg-color);
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin: 20px 0;
-            padding: 20px;
+            margin: 2vh 0;
+            padding: 2vh 2vw;
             text-align: left;
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 1s, transform 1s;
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 2vw;
             color: #ffffff;
         }
+
         .card.show {
             opacity: 1;
             transform: translateY(0);
         }
+
         .card i {
-            font-size: 24px;
-            margin-right: 10px;
+            font-size: 6vw;
+            margin-right: 1vw;
         }
+
         .card p {
             margin: 0;
-            font-size: 16px;
+            font-size: 4vw;
             flex: 3;
         }
+
         .footer {
-            background-color: #86c434;
+            background-color: var(--highlight-color);
             color: #fff;
             text-align: center;
-            padding: 10px;
+            padding: 2vh 0;
         }
+
         .footer a {
             color: #fff;
             text-decoration: none;
-            background-color: #8848b1;
-            padding: 10px 20px;
+            background-color: var(--button-bg-color);
+            padding: 2vh 4vw;
             border-radius: 5px;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
         }
+
         .footer a:hover {
-            background-color: #8a2be2;
+            background-color: var(--button-hover-bg-color);
+            transform: scale(1.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
+
+        .footer a:active {
+            background-color: var(--button-active-bg-color);
+            transform: scale(0.95);
+        }
+
         .hidden {
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.5s, transform 0.5s;
         }
+
         .show {
             opacity: 1;
             transform: translateY(0);
         }
+
         .closing-section {
             background: url('imagenes/seccion2.jpg') no-repeat center center;
             background-size: cover;
             color: #3a2a1b;
             text-align: center;
-            padding: 50px 20px;
-            font-size: 24px;
+            padding: 5vh 2vw;
+            font-size: 6vw;
             position: relative;
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 1s, transform 1s;
         }
+
         .closing-section.show {
             opacity: 1;
             transform: translateY(0);
         }
+
         .closing-section p {
             margin: 0;
         }
+
         .audio-player {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
+            bottom: 2vh;
+            right: 2vw;
             z-index: 1000;
         }
+
         .audio-player button {
             background-color: #fff;
             border: none;
             border-radius: 50%;
             box-shadow: 0 4px 8px rgba(22, 189, 175, 0.2);
             cursor: pointer;
-            font-size: 12px;
-            padding: 15px;
+            font-size: 4vw;
+            padding: 2vw;
             transition: background-color 0.3s, transform 0.3s;
             display: flex;
             align-items: center;
             justify-content: center;
         }
+
         .audio-player button:hover {
             background-color: #f0f0f0;
             transform: scale(1.1);
         }
+
         .audio-player button:active {
             background-color: #ddd;
             transform: scale(0.95);
         }
 
+        @media (min-width: 768px) {
+            .header h1 {
+                font-size: 72px;
+            }
+
+            .header h2 {
+                font-size: 24px;
+            }
+
+            .countdown {
+                font-size: 24px;
+            }
+
+            .countdown div {
+                width: 60px;
+                padding: 10px;
+            }
+
+            .intro-section {
+                font-size: 24px;
+                padding: 50px 20px;
+            }
+
+            .card i {
+                font-size: 24px;
+            }
+
+            .card p {
+                font-size: 16px;
+            }
+
+            .closing-section {
+                font-size: 24px;
+                padding: 50px 20px;
+            }
+
+            .audio-player button {
+                font-size: 12px;
+                padding: 15px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -287,7 +371,7 @@
 
 <div class="footer">
     Andrea Camila 2024<br><br>
-    <a href="https://facebook.com/juanjophoto" target="_blank" style="background-color: #1f9a1b;">Diseño</a>
+    <a href="https://facebook.com/juanjophoto" target="_blank">Diseño</a>
 </div>
 
 <div class="audio-player">
@@ -367,3 +451,4 @@
 
 </body>
 </html>
+
