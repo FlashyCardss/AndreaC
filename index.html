@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación XV Años Andrea Camila</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Lexend', sans-serif;
+            background: #f0e9db;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background: url('imagenes/fondo.jpg') no-repeat center center;
+            background-size: cover;
+            color: #000000;
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+            z-index: 1;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 72px;
+            font-family: 'Brush Script MT', cursive;
+            font-weight: 400;
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: fadeIn 2s forwards;
+        }
+        .header h2 {
+            margin: 10px 0 0;
+            font-size: 24px;
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: fadeIn 2s forwards;
+            animation-delay: 1s;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .countdown {
+            font-size: 24px;
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            font-family: Arial, sans-serif;
+            color: #799365;
+        }
+        .countdown div {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            width: 60px;
+        }
+        .intro-section {
+            background: url('imagenes/seccion2.jpg') no-repeat center center;
+            background-size: cover;
+            color: #3a2a1b;
+            text-align: center;
+            padding: 50px 20px;
+            font-size: 24px;
+            position: relative;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s, transform 1s;
+        }
+        .intro-section.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .intro-section p {
+            margin: 0;
+        }
+        .container {
+            width: 100%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px 0;
+            background: linear-gradient(to bottom, #f4f4f4, #e0e0e0);
+            background-image: repeating-linear-gradient(
+                45deg,
+                rgba(0, 0, 0, 0.05),
+                rgba(0, 0, 0, 0.05) 1px,
+                transparent 1px,
+                transparent 10px
+            );
+        }
+        .card {
+            background-color: rgba(231, 177, 29, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            padding: 20px;
+            text-align: left;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s, transform 1s;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            color: #ffffff;
+        }
+        .card.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .card i {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+        .card p {
+            margin: 0;
+            font-size: 16px;
+            flex: 3;
+        }
+        .footer {
+            background-color: #86c434;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+            background-color: #8848b1;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .footer a:hover {
+            background-color: #8a2be2;
+        }
+        .hidden {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s, transform 0.5s;
+        }
+        .show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .closing-section {
+            background: url('imagenes/seccion2.jpg') no-repeat center center;
+            background-size: cover;
+            color: #3a2a1b;
+            text-align: center;
+            padding: 50px 20px;
+            font-size: 24px;
+            position: relative;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s, transform 1s;
+        }
+        .closing-section.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .closing-section p {
+            margin: 0;
+        }
+        .audio-player {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        .audio-player button {
+            background-color: #fff;
+            border: none;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(22, 189, 175, 0.2);
+            cursor: pointer;
+            font-size: 12px;
+            padding: 15px;
+            transition: background-color 0.3s, transform 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .audio-player button:hover {
+            background-color: #f0f0f0;
+            transform: scale(1.1);
+        }
+        .audio-player button:active {
+            background-color: #ddd;
+            transform: scale(0.95);
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>Andrea Camila</h1>
+    <h2>Mis XV años</h2>
+    <div class="countdown" id="countdown"></div>
+</div>
+
+<div class="intro-section hidden" id="intro-section">
+    <p>¡Hola!</p>
+    <p>Me encantaría que me acompañaras a celebrar mis XV años.</p>
+    <p>Será una noche inolvidable llena de magia y alegría.</p>
+</div>
+
+<div class="container">
+    <div class="card hidden" id="section1">
+        <i class="fas fa-birthday-cake"></i>
+        <div>
+            <p><strong>Fecha:</strong> 14 de septiembre de 2024</p>
+            <p><strong>Hora:</strong> 18:00 hrs.</p>
+        </div>
+    </div>
+
+    <div class="card hidden" id="section2">
+        <i class="fas fa-map-marker-alt"></i>
+        <div>
+            <p><strong>Lugar:</strong> Salón Foyer, Courtyard Mazatlán Beach Resort</p>
+            <p><strong>Dirección:</strong> Av. Playa Gaviotas 214, Zona Dorada, CP 82110, Mazatlán, Sinaloa, México</p>
+            <p><strong>Mapa del Hotel:</strong> <a href="https://maps.app.goo.gl/KKDp2isst8js54x76" target="_blank">Ver en Google Maps</a></p>
+        </div>
+    </div>
+
+    <div class="card hidden" id="section3">
+        <i class="fas fa-church"></i>
+        <div>
+            <p><strong>Hora de la Ceremonia:</strong> 18:00 hrs.</p>
+            <p><strong>Lugar de la Ceremonia:</strong> En el mismo lugar (Salón Foyer)</p>
+        </div>
+    </div>
+
+    <div class="card hidden" id="section4">
+        <i class="fas fa-tshirt"></i>
+        <div>
+            <p><strong>Código de Vestimenta:</strong> Formal</p>
+        </div>
+    </div>
+
+    <div class="card hidden" id="section5">
+        <i class="fas fa-exclamation-circle"></i>
+        <div>
+            <p><strong>No se permitirá la entrada a niños.</strong></p>
+            <p><strong>Lluvia de sobres:</strong> Regalo de dinero</p>
+        </div>
+    </div>
+
+    <div class="card hidden" id="section6">
+        <i class="fas fa-calendar-check"></i>
+        <div>
+            <p><strong>Confirmar asistencia antes del 30 de agosto de 2024:</strong> </p>
+        </div>
+    </div>
+
+    <div class="card hidden" id="section7">
+        <i class="fas fa-hotel"></i>
+        <div>
+            <p>Para su comodidad, pueden hacer reservas en el hotel a través del siguiente enlace:</p>
+            <p><a href="https://www.marriott.com/es/event-reservations/reservation-link.mi?id=1720721340001&key=GRP&app=resvlink" target="_blank" style="color: #1a41c2;">Reservar habitación</a> (Vigencia del link: hasta el 16 de agosto de 2024)</p>
+            <p>Nota: Consideren que hay mucho tráfico en esas fechas. El hotel se encuentra en la zona dorada de Mazatlán.</p>
+        </div>
+    </div>
+
+    <div class="card hidden" id="section8">
+        <i class="fas fa-phone-alt"></i>
+        <div>
+            <p><strong>Papás:</strong></p>
+            <p>Daniel Morquecho</p>
+            <p>Haydee Vázquez</p>
+        </div>
+    </div>
+</div>
+
+<div class="closing-section hidden">
+    <p>¡Esperamos contar con su presencia para celebrar este momento especial!</p>
+    <p>Con cariño,</p>
+    <p>Daniel Morquecho y Haydee Vázquez</p>
+</div>
+
+<div class="footer">
+    Andrea Camila 2024<br><br>
+    <a href="https://facebook.com/juanjophoto" target="_blank" style="background-color: #1f9a1b;">Diseño</a>
+</div>
+
+<div class="audio-player">
+    <button id="play-pause">
+        <i class="fas fa-play"></i>
+    </button>
+    <audio id="audio" src="imagenes/Say Yes To Heaven.mp3"></audio>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const cards = document.querySelectorAll('.card');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                    entry.target.classList.remove('hidden');
+                } else {
+                    entry.target.classList.add('hidden');
+                    entry.target.classList.remove('show');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        cards.forEach(card => {
+            observer.observe(card);
+        });
+
+        const introSection = document.getElementById('intro-section');
+        observer.observe(introSection);
+
+        const closingSection = document.querySelector('.closing-section');
+        observer.observe(closingSection);
+
+        // Countdown Timer
+        function updateCountdown() {
+            const eventDate = new Date('2024-09-14T18:00:00');
+            const now = new Date();
+            const timeDiff = eventDate - now;
+
+            if (timeDiff <= 0) {
+                document.getElementById('countdown').innerHTML = '¡El evento ha comenzado!';
+                return;
+            }
+
+            const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+            document.getElementById('countdown').innerHTML = `
+                <div>${days}<br>d</div>
+                <div>${hours}<br>h</div>
+                <div>${minutes}<br>m</div>
+                <div>${seconds}<br>s</div>
+            `;
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        // Audio Player
+        const playPauseButton = document.getElementById('play-pause');
+        const audio = document.getElementById('audio');
+
+        playPauseButton.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                playPauseButton.innerHTML = '<i class="fas fa-pause"></i>';
+            } else {
+                audio.pause();
+                playPauseButton.innerHTML = '<i class="fas fa-play"></i>';
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
