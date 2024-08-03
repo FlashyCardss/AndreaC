@@ -37,7 +37,7 @@
 
         .header h1 {
             margin: 0;
-            font-size: 16vw;
+            font-size: 12vw;
             font-family: 'Brush Script MT', cursive;
             font-weight: 400;
             opacity: 0;
@@ -48,9 +48,10 @@
         .header h2 {
             margin: 1vh 0 0;
             font-size: 6vw;
+            margin-top: -10px; /* Ajusta el valor negativo para mover hacia arriba */
             font-family: 'Brush Script MT', cursive;
             opacity: 0;
-            transform: translateY(-20px);
+            transform: translateY(40px);
             animation: fadeIn 2s forwards;
             animation-delay: 1s;
         }
@@ -86,7 +87,7 @@
             color: #000000;
             text-align: center;
             padding: 5vh 2vw;
-            font-size: 5vw;
+            font-size: 6vw;
             position: relative;
             opacity: 0;
             transform: translateY(20px);
@@ -193,7 +194,7 @@
             color: #000000;
             text-align: center;
             padding: 5vh 2vw;
-            font-size: 5vw;
+            font-size: 6vw;
             position: relative;
             opacity: 0;
             transform: translateY(20px);
@@ -293,7 +294,7 @@
 
 <div class="intro-section hidden" id="intro-section">
     <p>¡Hola!</p>
-    <p>Me encantaría que me acompañes a celebrar mis XV años.</p>
+    <p>Me encantaría que me acompañaras a celebrar mis XV años.</p>
     <p>Será una noche inolvidable llena de magia y alegría.</p>
 </div>
 
@@ -306,26 +307,23 @@
 
     <div class="card hidden" id="section2">
         <i class="fas fa-map-marker-alt"></i>
-        <p><strong>Lugar:</strong> Salón Foyer, Courtyard Mazatlán Beach Resort</p>
-        <p><strong>Dirección:</strong> Av. Playa Gaviotas 214, Zona Dorada, CP 82110, Mazatlán, Sinaloa, México</p>
-        <p><strong>Mapa del Hotel:</strong> <a href="https://maps.app.goo.gl/KKDp2isst8js54x76" target="_blank">Ver en Google Maps</a></p>
+        <p style="font-size: 1.4em; font-weight: bold;"><strong>Lugar:</strong></p>
+        <p style="font-size: 1.8em; font-weight: bold;">Salón Foyer</p>
+        <p>Courtyard Mazatlán Beach Resort</p>
+        <p>Av. Playa Gaviotas 214, Zona Dorada, CP 82110, Mazatlán, Sinaloa, México</p>
+        <p style="font-size: 0.9em;"><strong>Ubicación:</strong> <a href="https://maps.app.goo.gl/KKDp2isst8js54x76" target="_blank">Google Maps</a></p>
+        <img src="imagenes/hotel.jpg" alt="Hotel" style="display: block; margin: 0 auto; border-radius: 10px; max-width: 100%; height: auto;">
     </div>
-
-    <div class="card hidden" id="section3">
-        <i class="fas fa-church"></i>
-        <p><strong>Hora de la Ceremonia:</strong> 18:00 hrs.</p>
-        <p><strong>Lugar de la Ceremonia:</strong> En el mismo lugar (Salón Foyer)</p>
-    </div>
+    
 
     <div class="card hidden" id="section4">
-        <i class="fas fa-tshirt"></i>
+        <i class="fas fa-suitcase"></i>
         <p><strong>Código de Vestimenta:</strong> Formal</p>
     </div>
 
     <div class="card hidden" id="section5">
-        <i class="fas fa-exclamation-circle"></i>
-        <p><strong>No se permitirá la entrada a niños.</strong></p>
-        <p><strong>Lluvia de sobres:</strong> Regalo monetario</p>
+        <i class="fas fa-envelope"></i>
+        <p><strong>Lluvia de sobres:</strong> Regalo de dinero</p>
     </div>
 
     <div class="card hidden" id="section6">
@@ -432,5 +430,7 @@
     });
 </script>
 
+</body>
+</html>
 </body>
 </html>
